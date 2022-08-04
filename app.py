@@ -43,8 +43,8 @@ def upload():
     else:
         result1 = 'Your picture was not clearly labeled'
     #f.save(os.path.join(app.config['UPLOADED_PATH'], f.filename))
-    img = f.resize((256,256), Image.LANCZOS)
-    img_1 = np.array(PIL.Image.open(img))
+    f = f.resize(256,256)
+    img_1 = np.array(PIL.Image.open(f))
     img_batch = np.expand_dims(img_1, 0)      
     predictions = MODEL.predict(img_batch)
     score = tf.nn.softmax(predictions[0])
