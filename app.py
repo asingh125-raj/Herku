@@ -24,8 +24,8 @@ app.config.update(
 )
 
 dropzone = Dropzone(app)
-MODEL = tf.keras.models.load_model("./models/CNN.h4")
-class_names = ['Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy']
+MODEL = tf.keras.models.load_model("./models/4")
+class_names = ['Healthy_leaf', 'Sick_leaf']
 global submission
 submission = 'Your file name'
 #global result
